@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import "../styles/Home.css";
+import "../styles/style.css";
+
 const Home = () => {
   const [associations, setAssociations] = useState([]);
 
@@ -17,14 +18,13 @@ const Home = () => {
 
   return (
     <div>
-      <h1 className="text-center mt-3">Associations</h1>
-      <section className="home-pictures">
+      <section className="home-pictures container">
         {associations.map((association) => {
           return (
             <Link to={`/${association.slug}`} key={association.name}>
               <article className="card-association">
                 <img
-                  className=""
+                  className="home-picture"
                   src={association.image}
                   alt={`${association.name}`}
                 />
